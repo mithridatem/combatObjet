@@ -1,5 +1,4 @@
 <?php
-
 class Combat{
     private ?int $nbrTour;
     private Personnage $gagnant;
