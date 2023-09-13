@@ -14,11 +14,11 @@ class Combat{
     public function lancerPartie(){
         while($this->nbrTour >0){
             $this->perso1->attaque($this->perso2);
-            $this->perso2->attaque($this->perso1);
             if($this->perso2->getVie()<=0){
                 $this->gagnant->setNom($this->perso1->getNom());
                 return $this->gagnant->getNom();
             }
+            $this->perso2->attaque($this->perso1);
             if($this->perso1->getVie()<=0){
                 $this->gagnant->setNom($this->perso2->getNom());
                 return $this->gagnant->getNom();
