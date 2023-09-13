@@ -12,6 +12,7 @@ class Combat{
     }
     public function lancerPartie(){
         while($this->nbrTour >0){
+            $this->nbrTour--;
             $this->perso1->attaque($this->perso2);
             if($this->perso2->getVie()<=0){
                 $this->gagnant->setNom($this->perso1->getNom());
@@ -22,7 +23,9 @@ class Combat{
                 $this->gagnant->setNom($this->perso2->getNom());
                 return $this->gagnant->getNom();
             }
-            $this->nbrTour--;
+            if($this->nbrTour == 0){
+                return "Egalité";
+            }
         }
     }
 }

@@ -35,7 +35,11 @@ class Personnage{
         $this->vie = $vie;
     }
     public function attaque(Personnage $rival):void{
-        $rival->vie -= ($this->force-$rival->defense) < 0 ? 0 : $this->force-$rival->defense;
+        if($this->force-$rival->defense<0){
+        }
+        else{
+            $rival->vie -= $this->force-$rival->defense;
+        }
     }
 }
 
